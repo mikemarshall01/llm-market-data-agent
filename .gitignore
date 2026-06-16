@@ -1,0 +1,19 @@
+# environments
+.venv/
+__pycache__/
+*.pyc
+
+# secrets
+.env
+
+# cached market data (re-fetched on first run; never committed)
+
+
+
+# jupyter
+.ipynb_checkpoints/
+
+# committed on purpose: assets/*.png (so charts render in the README without running),
+# the executed notebooks/*.ipynb (so GitHub shows the output inline), and
+# data/cached_agent_run.json (the illustrative cached Claude response, so the
+# notebook teaches end-to-end with no API key).

@@ -1,0 +1,37 @@
+{
+  "note": "SYNTHETIC ILLUSTRATIVE FIXTURE -- figures are plausible but NOT from a real API call. Committed so the notebook teaches end-to-end with NO key. The tool_result blocks are hand-authored to demonstrate the transcript format; they were not produced by a live tool run. Numbers will not match today's market and should be treated as worked-example values only.",
+  "captured_at": "SYNTHETIC -- not a real capture timestamp",
+  "model": "claude-opus-4-8",
+  "question": "How has ETH performed over the last 30 days, what is it trading at now, and how does Aave's TVL compare to Lido's?",
+  "transcript": [
+    {
+      "turn": 1,
+      "role": "assistant",
+      "stop_reason": "tool_use",
+      "text": "I'll pull live figures: ETH's 30-day performance and current price from Binance, then Aave and Lido TVL from DeFiLlama.",
+      "tool_calls": [
+        {"id": "toolu_a1", "name": "get_klines_summary", "input": {"symbol": "ETH", "days": 30}},
+        {"id": "toolu_a2", "name": "get_price", "input": {"symbol": "ETH"}},
+        {"id": "toolu_a3", "name": "get_tvl", "input": {"protocol": "aave"}},
+        {"id": "toolu_a4", "name": "get_tvl", "input": {"protocol": "lido"}}
+      ]
+    },
+    {
+      "turn": 1,
+      "role": "user",
+      "tool_results": [
+        {"tool_use_id": "toolu_a1", "content": {"symbol": "ETHUSDT", "days": 30, "start_close": 2980.41, "end_close": 3412.77, "return_pct": 14.51, "annualised_vol_pct": 58.3, "high": 3520.0, "low": 2901.12}},
+        {"tool_use_id": "toolu_a2", "content": {"symbol": "ETHUSDT", "price": 3412.77, "pct_change_24h": 1.84, "high_24h": 3450.0, "low_24h": 3360.5, "quote_currency": "USDT"}},
+        {"tool_use_id": "toolu_a3", "content": {"protocol": "aave", "tvl_usd": 12341254407.95}},
+        {"tool_use_id": "toolu_a4", "content": {"protocol": "lido", "tvl_usd": 14860938056.73}}
+      ]
+    },
+    {
+      "turn": 2,
+      "role": "assistant",
+      "stop_reason": "end_turn",
+      "text": "Here is the picture from live free data:\n\n- ETH is trading at about $3,413, up 1.8% over the last 24 hours.\n- Over the last 30 days it returned roughly +14.5%, ranging from a low near $2,901 to a high around $3,520, with an annualised volatility of about 58%.\n- On TVL, Lido is the larger protocol at about $14.86bn locked, versus Aave at about $12.34bn. Lido is therefore roughly 20% larger than Aave by TVL.\n\nNote these are illustrative snapshot figures from a cached run; with an API key set, the same loop returns today's live numbers.",
+      "tool_calls": []
+    }
+  ]
+}
