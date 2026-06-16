@@ -11,6 +11,17 @@ the exact request and falls back to a committed, clearly-labelled cached example
 **executes end to end with no key**. Part of a wider crypto-quant handbook; this is the
 applied-AI repo.
 
+## About
+
+This notebook began as my own notes while I taught myself how tool use (function calling)
+works, by building a small agent that answers plain-English questions about crypto markets
+from free data. I have tidied and organised it and put it online freely, in the hope that it
+is useful to others working through the same concepts. The emphasis is on explaining the
+ideas clearly, on free and public data. This is educational and illustrative work rather
+than production code or formal research, and any figures are there to illustrate the method
+rather than to report results. It is freely available under the MIT licence. Feedback and
+corrections are welcome. Provided as is, for educational use, with no warranty.
+
 ---
 
 ## What you will learn
@@ -81,6 +92,20 @@ jupyter notebook notebooks/01_market_data_agent.ipynb
 jupytext --to notebook notebooks/01_market_data_agent.py
 jupyter nbconvert --to notebook --execute --inplace notebooks/01_market_data_agent.ipynb
 ```
+
+### Cached by default, live if you want
+
+Out of the box this runs with **no API key**. The agent's Claude calls read a committed, clearly labelled illustrative transcript (`data/cached_agent_run.json`) and the data tools are free and keyless, so the notebook executes end to end offline.
+
+To run it live against the real model instead, get an **Anthropic API key** from [console.anthropic.com](https://console.anthropic.com). It is a pay-as-you-go API key, separate from any Claude.ai or Claude Code subscription, and a live run costs a few pence. Then:
+
+```bash
+cp .env.example .env          # .env is gitignored; never commit a real key
+# add to .env:  ANTHROPIC_API_KEY=sk-ant-...
+set -a; source .env; set +a
+```
+
+The cached file is hand-authored and illustrative, not a recording of a specific model run, so live output will differ. Anything you generate live is yours, under Anthropic's terms.
 
 ## Structure
 
