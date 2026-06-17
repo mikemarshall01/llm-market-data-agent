@@ -13,6 +13,8 @@
 # ---
 
 # %% [markdown]
+# *Educational notes, tidied and shared freely. Illustrative, not production.*
+#
 # # An LLM Agent that Answers Crypto-Market Questions with Tools
 #
 # **The whole pattern in one sentence: give a language model a menu of typed functions, let it ask for the data it needs, run those calls yourself, and feed the results back until it can answer from evidence rather than memory.** By the end of this notebook you will have built exactly that: a small *agent* that takes a plain-English question about crypto markets, decides which data to fetch, calls typed **tools** over free public APIs, and writes its answer from real numbers it just looked up.

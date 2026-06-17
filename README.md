@@ -95,7 +95,7 @@ jupyter nbconvert --to notebook --execute --inplace notebooks/01_market_data_age
 
 ### Cached by default, live if you want
 
-Out of the box this runs with **no API key**. The agent's Claude calls read a committed, clearly labelled illustrative transcript (`data/cached_agent_run.json`) and the data tools are free and keyless, so the notebook executes end to end offline.
+Out of the box this runs with **no API key**. The agent's Claude calls read a committed, clearly labelled illustrative transcript (`data/cached_agent_run.json`) and the data tools are free and keyless, so the notebook executes end to end with no API key (the data tools still fetch live).
 
 To run it live against the real model instead, get an **Anthropic API key** from [console.anthropic.com](https://console.anthropic.com). It is a pay-as-you-go API key, separate from any Claude.ai or Claude Code subscription, and a live run costs a few pence. Then:
 
